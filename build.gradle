@@ -37,7 +37,7 @@ publishing {
         }
     }
     publications {
-        create("hellosunghyun", MavenPublication) {
+        create("gpr", MavenPublication) {
             from(components["java"])
             groupId = 'me.hellosunghyun'
             artifactId = 'SoopChatSDK'
