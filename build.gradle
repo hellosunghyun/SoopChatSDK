@@ -28,7 +28,7 @@ dependencies {
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
+            name = "SoopChatSDK"
             url = uri("https://maven.pkg.github.com/hellosunghyun/SoopChatSDK")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
