@@ -6,21 +6,43 @@ import me.hellosunghyun.soopchatsdk.chat.ChatManager
 import me.hellosunghyun.soopchatsdk.utils.Constants
 import kotlinx.coroutines.runBlocking
 
+/**
+ * SoopChatSDK의 주요 클래스입니다.
+ * 아프리카TV 채팅 기능을 위한 인터페이스를 제공합니다.
+ *
+ * @property clientId 클라이언트 ID
+ * @property clientSecret 클라이언트 시크릿
+ */
 class SoopChatSDK(private val clientId: String, private val clientSecret: String) {
     private val apiClient = ApiClient(Constants.API_SERVER_HOST)
     private var chatManager: ChatManager? = null
     private var accessToken: String? = null
     private var isConnected = false
 
+    /**
+     * OAuth 인증 페이지를 엽니다.
+     *
+     * @param redirectUri 인증 후 리디렉션될 URI
+     */
     fun openAuth(redirectUri: String) {
         val oAuth = OAuth(clientId, clientSecret)
         oAuth.openAuth(redirectUri)
     }
 
+    /**
+     * 인증 토큰을 설정합니다.
+     *
+     * @param token 액세스 토큰
+     */
     fun setAuthToken(token: String) {
         accessToken = token
     }
 
+    /**
+     * 채팅 서버에 연결합니다.
+     *
+     * @throws Exception 연결 실패 시 예외 발생
+     */
     fun connect() = runBlocking {
         if (accessToken == null) {
             throw Exception("Access token is required.")

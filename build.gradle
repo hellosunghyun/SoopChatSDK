@@ -1,48 +1,48 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
     id 'maven-publish'
 }
 
 group = 'me.hellosunghyun'
-version = '0.1-SNAPSHOT'
+version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
 kotlin {
     jvmToolchain(17)
 }
 
-dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    implementation("com.google.code.gson:gson:2.11.0")
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/hellosunghyun/SoopChatSDK")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
     publications {
-        create("gpr", MavenPublication) {
-            from(components["java"])
-            groupId = 'me.hellosunghyun'
-            artifactId = 'soopchatsdk'
-            version = '0.1-SNAPSHOT'
-
+        mavenJava(MavenPublication) {
+            from components.java
+            
             pom {
                 name.set('SoopChatSDK')
                 description.set('Description of your project.')

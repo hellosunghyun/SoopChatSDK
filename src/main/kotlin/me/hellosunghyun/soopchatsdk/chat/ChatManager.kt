@@ -8,6 +8,15 @@ import java.nio.ByteBuffer
 import java.nio.channels.AsynchronousSocketChannel
 import java.nio.channels.CompletionHandler
 
+/**
+ * 채팅 관리를 위한 클래스입니다.
+ *
+ * @property chatAddress 채팅 서버 주소
+ * @property bjId BJ ID
+ * @property accessToken 액세스 토큰
+ * @property ticket 채팅 티켓
+ * @property chatNo 채팅방 번호
+ */
 class ChatManager(
     private val chatAddress: String,
     private val bjId: String,
@@ -23,6 +32,9 @@ class ChatManager(
         connectWebSocket()
     }
 
+    /**
+     * 웹소켓 연결을 시작합니다.
+     */
     private fun connectWebSocket() {
         scope.launch {
             try {
@@ -38,6 +50,9 @@ class ChatManager(
         }
     }
 
+    /**
+     * 로그인 패킷을 전송합니다.
+     */
     private suspend fun sendLoginPacket() {
         val packet = makePacket(Constants.ServiceCode.SVC_SDK_LOGIN.code, mapOf("ticket" to ticket))
         webSocket?.write(ByteBuffer.wrap(packet))
