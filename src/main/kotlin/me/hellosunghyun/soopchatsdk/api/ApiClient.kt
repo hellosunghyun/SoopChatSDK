@@ -1,8 +1,8 @@
-package api
+package me.hellosunghyun.soopchatsdk.api
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import utils.Constants
+import me.hellosunghyun.soopchatsdk.utils.Constants
 import java.net.HttpURLConnection
 import java.net.URL
 

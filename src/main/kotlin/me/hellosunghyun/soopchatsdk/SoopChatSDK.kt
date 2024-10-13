@@ -1,9 +1,9 @@
-package com.soopchatsdk
+package me.hellosunghyun.soopchatsdk
 
-import api.OAuth
-import api.ApiClient
-import chat.ChatManager
-import utils.Constants
+import me.hellosunghyun.soopchatsdk.api.OAuth
+import me.hellosunghyun.soopchatsdk.api.ApiClient
+import me.hellosunghyun.soopchatsdk.chat.ChatManager
+import me.hellosunghyun.soopchatsdk.utils.Constants
 import kotlinx.coroutines.runBlocking
 
 class SoopChatSDK(private val clientId: String, private val clientSecret: String) {

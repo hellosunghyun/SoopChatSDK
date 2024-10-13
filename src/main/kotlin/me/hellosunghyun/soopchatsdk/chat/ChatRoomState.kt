@@ -1,6 +1,6 @@
-package chat
+package me.hellosunghyun.soopchatsdk.chat
 
-import utils.Constants
+import me.hellosunghyun.soopchatsdk.utils.Constants
 
 object ChatRoomState {
     var chatNumber: Int = 0

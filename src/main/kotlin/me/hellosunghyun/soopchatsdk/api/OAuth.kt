@@ -1,6 +1,6 @@
-package api
+package me.hellosunghyun.soopchatsdk.api
 
-import utils.Constants
+import me.hellosunghyun.soopchatsdk.utils.Constants
 import kotlinx.coroutines.runBlocking
 import com.google.gson.Gson
 

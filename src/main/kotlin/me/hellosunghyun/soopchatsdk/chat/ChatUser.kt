@@ -1,6 +1,6 @@
-package chat
+package me.hellosunghyun.soopchatsdk.chat
 
-import utils.Constants.UserFlag
+import me.hellosunghyun.soopchatsdk.utils.Constants.UserFlag
 
 class ChatUser(
     var userId: String? = null,

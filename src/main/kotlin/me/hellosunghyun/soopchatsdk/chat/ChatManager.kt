@@ -1,7 +1,7 @@
-package chat
+package me.hellosunghyun.soopchatsdk.chat
 
-import utils.Constants
-import utils.Utils
+import me.hellosunghyun.soopchatsdk.utils.Constants
+import me.hellosunghyun.soopchatsdk.utils.Utils
 import kotlinx.coroutines.*
 import java.net.URI
 import java.nio.ByteBuffer

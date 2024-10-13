@@ -1,4 +1,4 @@
-package utils
+package me.hellosunghyun.soopchatsdk.utils
 
 import java.nio.ByteBuffer
 import java.nio.charset.Charset

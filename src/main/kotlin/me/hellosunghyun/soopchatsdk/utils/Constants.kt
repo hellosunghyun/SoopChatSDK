@@ -1,4 +1,4 @@
-package utils
+package me.hellosunghyun.soopchatsdk.utils
 
 // 상수 및 열거형 정의를 담고 있는 Constants 객체
 object Constants {
