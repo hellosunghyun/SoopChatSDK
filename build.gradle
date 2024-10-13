@@ -39,8 +39,8 @@ publishing {
     publications {
         create("gpr", MavenPublication) {
             from(components["java"])
-            groupId = 'io.github.hellosunghyun'
-            artifactId = 'SoopChatSDK'
+            groupId = 'me.hellosunghyun'
+            artifactId = 'soopchatsdk'
             version = '0.1-SNAPSHOT'
 
             pom {
