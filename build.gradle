@@ -28,11 +28,11 @@ dependencies {
 publishing {
     repositories {
         maven {
-            name = "SoopChatSDK"
+            name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/hellosunghyun/SoopChatSDK")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
