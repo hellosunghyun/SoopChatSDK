@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'me.hellosunghyun'
-version = '0.1-SNAPSHOT'
+version = '0.2-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -41,7 +41,7 @@ publishing {
             from(components["java"])
             groupId = 'me.hellosunghyun'
             artifactId = 'soopchatsdk'
-            version = '0.1-SNAPSHOT'
+            version = '0.2-SNAPSHOT'
 
             pom {
                 name.set('SoopChatSDK')
