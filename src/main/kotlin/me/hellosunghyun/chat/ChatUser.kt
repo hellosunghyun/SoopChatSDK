@@ -40,8 +40,8 @@ class ChatUser(
     }
 
     // 혼합된 플래그 반환
-    fun getMixedFlag(): String {
-        return "$flag$flag2"
+    fun getMixedFlag(flag1: Int?, flag2: Int?): String {
+        return "${flag1 ?: 0}|${flag2 ?: 0}"
     }
 
     // 플래그 설정
@@ -72,7 +72,7 @@ class ChatUser(
             "userNickname" to userNickname,
             "flag1" to flag1,
             "flag2" to flag2,
-            "flag" to getMixedFlag(),
+            "flag" to getMixedFlag(flag1, flag2),
             "subscriptionMonth" to subscriptionMonth
         )
     }

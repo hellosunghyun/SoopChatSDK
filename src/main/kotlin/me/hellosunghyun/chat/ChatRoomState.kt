@@ -14,7 +14,7 @@ object ChatRoomState {
     var maxManagerCount: Int = 10
     var currentPenaltyCount: Int = 0
     var lastWhisperUserId: String = ""
-    var chatNotice: ChatNotice = ChatNotice()
+    var _chatNotice: ChatNotice = ChatNotice()
 
     data class ChatNotice(
         var isShow: Boolean = false,
@@ -40,11 +40,11 @@ object ChatRoomState {
     }
 
     fun setChatNotice(show: Boolean, message: String) {
-        chatNotice.isShow = show
-        chatNotice.message = message
+        _chatNotice.isShow = show
+        _chatNotice.message = message
     }
 
     fun getChatNotice(): ChatNotice {
-        return chatNotice
+        return _chatNotice
     }
 }
