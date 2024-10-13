@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'java'
     id 'maven-publish'
 }
 
@@ -10,19 +10,13 @@ repositories {
     mavenCentral()
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-kotlin {
-    jvmToolchain(17)
-}
+sourceCompatibility = 17
+targetCompatibility = 17
 
 dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    implementation("com.google.code.gson:gson:2.11.0")
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0'
+    implementation 'com.google.code.gson:gson:2.11.0'
 }
 
 publishing {
@@ -31,42 +25,40 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/hellosunghyun/SoopChatSDK")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
             }
         }
     }
+
     publications {
-        create("gpr", MavenPublication) {
-            from(components["java"])
-            groupId = 'me.hellosunghyun'
+        gpr(MavenPublication) {
+            from components.java
+            groupId = group
             artifactId = 'SoopChatSDK'
-            version = '0.1-SNAPSHOT'
+            version = project.version
 
             pom {
-                name.set('SoopChatSDK')
-                description.set('Description of your project.')
-                url.set('https://github.com/hellosunghyun/SoopChatSDK')
-
+                name = "SoopChatSDK"
+                description = "Description of your project."
+                url = "https://github.com/hellosunghyun/SoopChatSDK"
                 licenses {
                     license {
-                        name.set('The Apache License, Version 2.0')
-                        url.set('http://www.apache.org/licenses/LICENSE-2.0.txt')
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
                     }
                 }
-
                 developers {
                     developer {
-                        id.set('hellosunghyun')
-                        name.set('Your Name')
-                        email.set('your_email@example.com')
+                        id = "hellosunghyun"
+                        name = "Your Name"
+                        email = "your_email@example.com"
                     }
                 }
-
                 scm {
-                    connection.set('scm:git:git://github.com/hellosunghyun/SoopChatSDK.git')
-                    developerConnection.set('scm:git:ssh://github.com/hellosunghyun/SoopChatSDK.git')
-                    url.set('https://github.com/hellosunghyun/SoopChatSDK')
+                    connection = "scm:git:git://github.com/hellosunghyun/SoopChatSDK.git"
+                    developerConnection = "scm:git:ssh://github.com/hellosunghyun/SoopChatSDK.git"
+                    url = "https://github.com/hellosunghyun/SoopChatSDK"
                 }
             }
         }
