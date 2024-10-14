@@ -18,10 +18,9 @@ class OAuth(private val clientId: String, private val clientSecret: String) {
      *
      * @param redirectUri 인증 후 리디렉션될 URI
      */
-    fun openAuth(redirectUri: String) {
+    fun openAuth(redirectUri: String): String {
         val url = "${Constants.API_SERVER_HOST}/auth/code?client_id=$clientId&response_type=code&redirect_uri=$redirectUri"
-        // 웹 브라우저를 열어 사용자에게 인증을 요청합니다.
-        // 구현은 플랫폼에 따라 달라집니다.
+        return url
     }
 
     /**
