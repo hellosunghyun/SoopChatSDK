@@ -1,6 +1,9 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.0.20'
     id 'maven-publish'
+    id 'java'
+    // Dokka 플러그인 추가
+    id 'org.jetbrains.dokka' version '1.9.10'
 }
 
 group = 'me.hellosunghyun'
@@ -13,6 +16,15 @@ repositories {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+    withJavadocJar()
+}
+
+javadoc {
+    // 생성된 JavaDocs의 encoding 설정
+    options.encoding = 'UTF-8'
+
+    // 링크 추가 예시 (외부 JDK 문서 링크)
+    options.links('https://docs.oracle.com/javase/8/docs/api/')
 }
 
 kotlin {
@@ -23,6 +35,34 @@ dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
     implementation("com.google.code.gson:gson:2.11.0")
+    // Dokka 의존성 추가
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.9.10")
+}
+
+// Dokka 태스크 설정
+tasks.dokkaHtml.configure {
+    outputDirectory.set(layout.buildDirectory.dir("dokka"))
+    moduleName.set("SoopChatSDK")
+    dokkaSourceSets {
+        named("main") {
+            includeNonPublic.set(false)
+            skipEmptyPackages.set(true)
+            reportUndocumented.set(true)
+            jdkVersion.set(17)
+        }
+    }
+}
+
+// Javadoc 태스크를 Dokka HTML로 대체
+tasks.named('javadoc') {
+    dependsOn(tasks.dokkaHtml)
+}
+
+// Javadoc JAR 태스크 수정
+tasks.named('javadocJar', Jar) {
+    dependsOn(tasks.dokkaHtml)
+    from(tasks.dokkaHtml)
+    archiveClassifier.set('javadoc')
 }
 
 publishing {
@@ -75,4 +115,10 @@ publishing {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Javadoc) {
+    // 도큐먼트에 표시되는 문자열 설정
+    options.author = true
+    options.version = true
 }

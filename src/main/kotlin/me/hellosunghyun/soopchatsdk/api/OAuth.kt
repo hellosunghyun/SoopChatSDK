@@ -4,15 +4,32 @@ import me.hellosunghyun.soopchatsdk.utils.Constants
 import kotlinx.coroutines.runBlocking
 import com.google.gson.Gson
 
+/**
+ * OAuth 인증을 처리하는 클래스입니다.
+ *
+ * @property clientId 클라이언트 ID
+ * @property clientSecret 클라이언트 시크릿
+ */
 class OAuth(private val clientId: String, private val clientSecret: String) {
     private val apiClient = ApiClient(Constants.API_SERVER_HOST)
 
+    /**
+     * OAuth 인증 페이지를 엽니다.
+     *
+     * @param redirectUri 인증 후 리디렉션될 URI
+     */
     fun openAuth(redirectUri: String) {
         val url = "${Constants.API_SERVER_HOST}/auth/code?client_id=$clientId&response_type=code&redirect_uri=$redirectUri"
         // 웹 브라우저를 열어 사용자에게 인증을 요청합니다.
         // 구현은 플랫폼에 따라 달라집니다.
     }
 
+    /**
+     * 인증 코드를 사용하여 액세스 토큰을 요청합니다.
+     *
+     * @param code 인증 코드
+     * @return 토큰 정보를 담은 Map
+     */
     suspend fun getAuth(code: String): Map<String, String> {
         val response = apiClient.post("/auth/token", mapOf(
             "grant_type" to "authorization_code",
@@ -25,6 +42,12 @@ class OAuth(private val clientId: String, private val clientSecret: String) {
         return parseTokenResponse(response)
     }
 
+    /**
+     * 리프레시 토큰을 사용하여 새로운 액세스 토큰을 요청합니다.
+     *
+     * @param refreshToken 리프레시 토큰
+     * @return 새로운 토큰 정보를 담은 Map
+     */
     suspend fun refreshAuth(refreshToken: String): Map<String, String> {
         val response = apiClient.post("/auth/token", mapOf(
             "grant_type" to "refresh_token",
@@ -36,6 +59,12 @@ class OAuth(private val clientId: String, private val clientSecret: String) {
         return parseTokenResponse(response)
     }
 
+    /**
+     * 토큰 응답을 파싱합니다.
+     *
+     * @param response API 응답 문자열
+     * @return 파싱된 토큰 정보를 담은 Map
+     */
     private fun parseTokenResponse(response: String): Map<String, String> {
         // 응답 JSON을 파싱하여 access_token 및 refresh_token을 추출합니다.
         // 간단한 예시로 Gson 라이브러리를 사용합니다.
@@ -47,6 +76,9 @@ class OAuth(private val clientId: String, private val clientSecret: String) {
         )
     }
 
+    /**
+     * 토큰 응답 데이터 클래스입니다.
+     */
     data class TokenResponse(
         val access_token: String,
         val refresh_token: String,

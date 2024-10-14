@@ -47,11 +47,24 @@ class ApiClient(private val baseUrl: String) {
         handleResponse(connection)
     }
 
+    /**
+     * URL을 생성합니다.
+     *
+     * @param path 요청 경로
+     * @param params 쿼리 파라미터
+     * @return 완성된 URL 문자열
+     */
     private fun buildUrl(path: String, params: Map<String, String>?): String {
         val paramString = params?.map { "${it.key}=${it.value}" }?.joinToString("&") ?: ""
         return if (paramString.isNotEmpty()) "$baseUrl$path?$paramString" else "$baseUrl$path"
     }
 
+    /**
+     * HTTP 응답을 처리합니다.
+     *
+     * @param connection HttpURLConnection 객체
+     * @return 응답 문자열
+     */
     private fun handleResponse(connection: HttpURLConnection): String {
         return if (connection.responseCode in 200..299) {
             connection.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
@@ -60,7 +73,12 @@ class ApiClient(private val baseUrl: String) {
         }
     }
 
-    // 에러 응답을 처리하는 함수
+    /**
+     * 에러 응답을 처리합니다.
+     *
+     * @param connection HttpURLConnection 객체
+     * @return 에러 메시지 문자열
+     */
     private fun handleErrorResponse(connection: HttpURLConnection): String {
         return connection.errorStream?.bufferedReader(Charsets.UTF_8)?.use { it.readText() } ?: "Unknown error"
     }
