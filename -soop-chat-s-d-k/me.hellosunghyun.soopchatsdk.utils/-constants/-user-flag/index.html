@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>UserFlag</title>
+    <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../../index.html">
+                            SoopChatSDK
+                    </a>
+            </div>
+            <div class="library-version">
+0.1-SNAPSHOT            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dokkaHtml/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="SoopChatSDK::me.hellosunghyun.soopchatsdk.utils/Constants.UserFlag///PointingToDeclaration//769193423">
+  <div class="breadcrumbs"><a href="../../../../index.html">SoopChatSDK</a><span class="delimiter">/</span><a href="../../index.html">me.hellosunghyun.soopchatsdk.utils</a><span class="delimiter">/</span><a href="../index.html">Constants</a><span class="delimiter">/</span><span class="current">UserFlag</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>User</span><wbr></wbr><span><span>Flag</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">UserFlag</a></div><p class="paragraph">사용자 플래그를 정의하는 객체입니다. 각 사용자의 상태나 권한을 나타내는 비트 플래그들을 포함합니다. 플래그는 두 그룹으로 나뉘어 있으며, 각 그룹은 32비트를 사용합니다.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-884940525%2FProperties%2F769193423" anchor-label="ADMIN" id="-884940525%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-884940525%2FProperties%2F769193423"><span><span>ADMIN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-884940525%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-884940525%2FProperties%2F769193423">ADMIN</a></div><div class="brief "><p class="paragraph">관리자 권한을 가진 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="44936635%2FProperties%2F769193423" anchor-label="ADMINCHAT" id="44936635%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#44936635%2FProperties%2F769193423"><span><span>ADMINCHAT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="44936635%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#44936635%2FProperties%2F769193423">ADMINCHAT</a></div><div class="brief "><p class="paragraph">관리자 채팅 권한을 가진 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1713467499%2FProperties%2F769193423" anchor-label="ATAG_ALLOW" id="-1713467499%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1713467499%2FProperties%2F769193423"><span><span>ATAG_ALLOW</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1713467499%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1713467499%2FProperties%2F769193423">ATAG_ALLOW</a></div><div class="brief "><p class="paragraph">A태그 사용이 허용된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-520087165%2FProperties%2F769193423" anchor-label="AUTODUMB" id="-520087165%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-520087165%2FProperties%2F769193423"><span><span>AUTODUMB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-520087165%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-520087165%2FProperties%2F769193423">AUTODUMB</a></div><div class="brief "><p class="paragraph">자동으로 채팅 금지된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1165516700%2FProperties%2F769193423" anchor-label="AUTOMANAGER" id="-1165516700%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1165516700%2FProperties%2F769193423"><span><span>AUTOMANAGER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1165516700%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1165516700%2FProperties%2F769193423">AUTOMANAGER</a></div><div class="brief "><p class="paragraph">자동으로 매니저 권한이 부여된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-834879248%2FProperties%2F769193423" anchor-label="BJ" id="-834879248%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-834879248%2FProperties%2F769193423"><span><span>BJ</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-834879248%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-834879248%2FProperties%2F769193423">BJ</a></div><div class="brief "><p class="paragraph">BJ (방송 진행자)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1003822433%2FProperties%2F769193423" anchor-label="CHROMECAST" id="-1003822433%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1003822433%2FProperties%2F769193423"><span><span>CHROMECAST</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1003822433%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1003822433%2FProperties%2F769193423">CHROMECAST</a></div><div class="brief "><p class="paragraph">크롬캐스트를 사용하는 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1915275234%2FProperties%2F769193423" anchor-label="CLAN" id="1915275234%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1915275234%2FProperties%2F769193423"><span><span>CLAN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1915275234%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1915275234%2FProperties%2F769193423">CLAN</a></div><div class="brief "><p class="paragraph">클랜 회원</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="987449579%2FProperties%2F769193423" anchor-label="CLEANATI" id="987449579%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#987449579%2FProperties%2F769193423"><span><span>CLEANATI</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="987449579%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#987449579%2FProperties%2F769193423">CLEANATI</a></div><div class="brief "><p class="paragraph">클린아티 활동 참여 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1004409169%2FProperties%2F769193423" anchor-label="DOBAE_BLIND" id="1004409169%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1004409169%2FProperties%2F769193423"><span><span>DOBAE_BLIND</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1004409169%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1004409169%2FProperties%2F769193423">DOBAE_BLIND</a></div><div class="brief "><p class="paragraph">도배 방지 플래그가 설정된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="621880503%2FProperties%2F769193423" anchor-label="DOBAE_BLIND2" id="621880503%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#621880503%2FProperties%2F769193423"><span><span>DOBAE_BLIND2</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="621880503%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#621880503%2FProperties%2F769193423">DOBAE_BLIND2</a></div><div class="brief "><p class="paragraph">도배 방지 플래그 2가 설정된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1402023342%2FProperties%2F769193423" anchor-label="DUMB" id="-1402023342%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1402023342%2FProperties%2F769193423"><span><span>DUMB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1402023342%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1402023342%2FProperties%2F769193423">DUMB</a></div><div class="brief "><p class="paragraph">채팅 금지된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="444300572%2FProperties%2F769193423" anchor-label="DUMB_BLIND" id="444300572%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#444300572%2FProperties%2F769193423"><span><span>DUMB_BLIND</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="444300572%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#444300572%2FProperties%2F769193423">DUMB_BLIND</a></div><div class="brief "><p class="paragraph">블라인드 처리된 채팅 금지 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="99240202%2FProperties%2F769193423" anchor-label="EMPLOYEE" id="99240202%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#99240202%2FProperties%2F769193423"><span><span>EMPLOYEE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="99240202%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#99240202%2FProperties%2F769193423">EMPLOYEE</a></div><div class="brief "><p class="paragraph">아프리카TV 직원 계정</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1106816465%2FProperties%2F769193423" anchor-label="EXITUSER" id="-1106816465%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1106816465%2FProperties%2F769193423"><span><span>EXITUSER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1106816465%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1106816465%2FProperties%2F769193423">EXITUSER</a></div><div class="brief "><p class="paragraph">채팅방에서 퇴장한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="691735065%2FProperties%2F769193423" anchor-label="FANCLUB" id="691735065%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#691735065%2FProperties%2F769193423"><span><span>FANCLUB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="691735065%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#691735065%2FProperties%2F769193423">FANCLUB</a></div><div class="brief "><p class="paragraph">팬클럽 회원</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="355971308%2FProperties%2F769193423" anchor-label="FEMALE" id="355971308%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#355971308%2FProperties%2F769193423"><span><span>FEMALE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="355971308%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#355971308%2FProperties%2F769193423">FEMALE</a></div><div class="brief "><p class="paragraph">여성 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="23444370%2FProperties%2F769193423" anchor-label="FLASH" id="23444370%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#23444370%2FProperties%2F769193423"><span><span>FLASH</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="23444370%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#23444370%2FProperties%2F769193423">FLASH</a></div><div class="brief "><p class="paragraph">플래시 플레이어를 사용하는 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1994821018%2FProperties%2F769193423" anchor-label="FOLLOWER" id="1994821018%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1994821018%2FProperties%2F769193423"><span><span>FOLLOWER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1994821018%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1994821018%2FProperties%2F769193423">FOLLOWER</a></div><div class="brief "><p class="paragraph">팔로워</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-82475976%2FProperties%2F769193423" anchor-label="GAMEGOD" id="-82475976%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-82475976%2FProperties%2F769193423"><span><span>GAMEGOD</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-82475976%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-82475976%2FProperties%2F769193423">GAMEGOD</a></div><div class="brief "><p class="paragraph">'게임의 신' 등급 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-884585101%2FProperties%2F769193423" anchor-label="GLOBAL_APP" id="-884585101%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-884585101%2FProperties%2F769193423"><span><span>GLOBAL_APP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-884585101%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-884585101%2FProperties%2F769193423">GLOBAL_APP</a></div><div class="brief "><p class="paragraph">글로벌 앱을 사용하는 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="676371891%2FProperties%2F769193423" anchor-label="GLOBAL_PC" id="676371891%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#676371891%2FProperties%2F769193423"><span><span>GLOBAL_PC</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="676371891%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#676371891%2FProperties%2F769193423">GLOBAL_PC</a></div><div class="brief "><p class="paragraph">글로벌 PC 버전으로 접속한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1330999978%2FProperties%2F769193423" anchor-label="GUEST" id="1330999978%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1330999978%2FProperties%2F769193423"><span><span>GUEST</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1330999978%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1330999978%2FProperties%2F769193423">GUEST</a></div><div class="brief "><p class="paragraph">게스트 사용자 (임시 계정)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="533492814%2FProperties%2F769193423" anchor-label="HIDDEN" id="533492814%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#533492814%2FProperties%2F769193423"><span><span>HIDDEN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="533492814%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#533492814%2FProperties%2F769193423">HIDDEN</a></div><div class="brief "><p class="paragraph">숨겨진 사용자 (채팅방에서 보이지 않음)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1147323133%2FProperties%2F769193423" anchor-label="INSTANCE" id="-1147323133%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1147323133%2FProperties%2F769193423"><span><span>INSTANCE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1147323133%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="index.html">Constants.UserFlag</a> <a href="index.html#-1147323133%2FProperties%2F769193423">INSTANCE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-713592981%2FProperties%2F769193423" anchor-label="LGGAME" id="-713592981%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-713592981%2FProperties%2F769193423"><span><span>LGGAME</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-713592981%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-713592981%2FProperties%2F769193423">LGGAME</a></div><div class="brief "><p class="paragraph">LG 게임 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1683751221%2FProperties%2F769193423" anchor-label="MANAGER" id="1683751221%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1683751221%2FProperties%2F769193423"><span><span>MANAGER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1683751221%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1683751221%2FProperties%2F769193423">MANAGER</a></div><div class="brief "><p class="paragraph">매니저 권한을 가진 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-949278121%2FProperties%2F769193423" anchor-label="MANAGERLIST" id="-949278121%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-949278121%2FProperties%2F769193423"><span><span>MANAGERLIST</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-949278121%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-949278121%2FProperties%2F769193423">MANAGERLIST</a></div><div class="brief "><p class="paragraph">매니저 목록에 포함된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1852655702%2FProperties%2F769193423" anchor-label="MOBILE" id="1852655702%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1852655702%2FProperties%2F769193423"><span><span>MOBILE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1852655702%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1852655702%2FProperties%2F769193423">MOBILE</a></div><div class="brief "><p class="paragraph">모바일 기기로 접속한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1140298497%2FProperties%2F769193423" anchor-label="MOBILE_WEB" id="1140298497%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1140298497%2FProperties%2F769193423"><span><span>MOBILE_WEB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1140298497%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1140298497%2FProperties%2F769193423">MOBILE_WEB</a></div><div class="brief "><p class="paragraph">모바일 웹으로 접속한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-626665906%2FProperties%2F769193423" anchor-label="NODIRECT" id="-626665906%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-626665906%2FProperties%2F769193423"><span><span>NODIRECT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-626665906%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-626665906%2FProperties%2F769193423">NODIRECT</a></div><div class="brief "><p class="paragraph">귓속말 수신을 거부한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1373280025%2FProperties%2F769193423" anchor-label="NORECVCHAT" id="1373280025%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1373280025%2FProperties%2F769193423"><span><span>NORECVCHAT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1373280025%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1373280025%2FProperties%2F769193423">NORECVCHAT</a></div><div class="brief "><p class="paragraph">채팅 수신을 거부한 ���용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1063085392%2FProperties%2F769193423" anchor-label="NOSUPERCHAT" id="1063085392%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1063085392%2FProperties%2F769193423"><span><span>NOSUPERCHAT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1063085392%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1063085392%2FProperties%2F769193423">NOSUPERCHAT</a></div><div class="brief "><p class="paragraph">슈퍼챗 수신을 거부한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-111394140%2FProperties%2F769193423" anchor-label="NOTITOPFAN" id="-111394140%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-111394140%2FProperties%2F769193423"><span><span>NOTITOPFAN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-111394140%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-111394140%2FProperties%2F769193423">NOTITOPFAN</a></div><div class="brief "><p class="paragraph">탑팬 알림을 설정한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-259822722%2FProperties%2F769193423" anchor-label="NOTIVODBALLOON" id="-259822722%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-259822722%2FProperties%2F769193423"><span><span>NOTIVODBALLOON</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-259822722%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-259822722%2FProperties%2F769193423">NOTIVODBALLOON</a></div><div class="brief "><p class="paragraph">VOD 풍선 알림을 설정한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-474323547%2FProperties%2F769193423" anchor-label="PC" id="-474323547%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-474323547%2FProperties%2F769193423"><span><span>PC</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-474323547%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-474323547%2FProperties%2F769193423">PC</a></div><div class="brief "><p class="paragraph">PC로 접속한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1181546330%2FProperties%2F769193423" anchor-label="POLICE" id="1181546330%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1181546330%2FProperties%2F769193423"><span><span>POLICE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1181546330%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1181546330%2FProperties%2F769193423">POLICE</a></div><div class="brief "><p class="paragraph">경찰 계정 (특별 관리 계정)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2085679408%2FProperties%2F769193423" anchor-label="QUICKVIEW" id="2085679408%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2085679408%2FProperties%2F769193423"><span><span>QUICKVIEW</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2085679408%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#2085679408%2FProperties%2F769193423">QUICKVIEW</a></div><div class="brief "><p class="paragraph">퀵뷰 기능을 사용하는 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-61273361%2FProperties%2F769193423" anchor-label="REALNAME" id="-61273361%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-61273361%2FProperties%2F769193423"><span><span>REALNAME</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-61273361%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-61273361%2FProperties%2F769193423">REALNAME</a></div><div class="brief "><p class="paragraph">실명 인증된 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1133732353%2FProperties%2F769193423" anchor-label="SPECIFY" id="1133732353%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1133732353%2FProperties%2F769193423"><span><span>SPECIFY</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1133732353%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1133732353%2FProperties%2F769193423">SPECIFY</a></div><div class="brief "><p class="paragraph">특정 조건에 해당하는 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1868140001%2FProperties%2F769193423" anchor-label="SPTR_STICKER" id="-1868140001%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1868140001%2FProperties%2F769193423"><span><span>SPTR_STICKER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1868140001%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#-1868140001%2FProperties%2F769193423">SPTR_STICKER</a></div><div class="brief "><p class="paragraph">후원 스티커를 사용한 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="322127503%2FProperties%2F769193423" anchor-label="TOP20" id="322127503%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#322127503%2FProperties%2F769193423"><span><span>TOP20</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="322127503%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#322127503%2FProperties%2F769193423">TOP20</a></div><div class="brief "><p class="paragraph">상위 20위 안에 든 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1573742967%2FProperties%2F769193423" anchor-label="TOPCLAN" id="1573742967%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1573742967%2FProperties%2F769193423"><span><span>TOPCLAN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1573742967%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1573742967%2FProperties%2F769193423">TOPCLAN</a></div><div class="brief "><p class="paragraph">탑클랜 회원</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="182345434%2FProperties%2F769193423" anchor-label="TOPFAN" id="182345434%2FProperties%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#182345434%2FProperties%2F769193423"><span><span>TOPFAN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="182345434%2FProperties%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#182345434%2FProperties%2F769193423">TOPFAN</a></div><div class="brief "><p class="paragraph">탑팬 (Top Fan) 사용자</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
