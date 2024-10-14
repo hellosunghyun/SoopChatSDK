@@ -21,9 +21,10 @@ import java.nio.channels.CompletionHandler
 class ChatManager(
     private val chatAddress: String,
     private val bjId: String,
-    private val accessToken: String,
+    private var accessToken: String,
     private val ticket: String,
-    private val chatNo: Int
+    private val chatNo: Int,
+    private val tokenRefreshCallback: suspend () -> String
 ) {
     private var webSocket: AsynchronousSocketChannel? = null
     private val scope = CoroutineScope(Dispatchers.IO)
@@ -54,11 +55,10 @@ class ChatManager(
 
     /**
      * 로그인 패킷을 전송합니다.
-     * 서버에 사용자 인증 정보를 보내 로그인을 수행합니다.
      */
     private suspend fun sendLoginPacket() {
         val packet = makePacket(Constants.ServiceCode.SVC_SDK_LOGIN.code, mapOf("ticket" to ticket))
-        webSocket?.write(ByteBuffer.wrap(packet))
+        sendPacket(packet)
     }
 
     /**
@@ -146,15 +146,13 @@ class ChatManager(
 
     /**
      * 채팅 메시지를 전송합니다.
-     *
-     * @param message 전송할 메시지 내용
-     * @param type 메시지 타입
      */
-    fun sendMessage(message: String, type: String) {
-        // 채팅 메시지 전송 로직 구현
-        val data = mapOf("message" to message, "type" to type)
-        val packet = makePacket(Constants.ServiceCode.SVC_CHATMESG.code, data)
-        webSocket?.write(ByteBuffer.wrap(packet))
+    suspend fun sendMessage(message: String, type: String) {
+        val packet = makePacket(Constants.ServiceCode.SVC_CHATMESG.code, mapOf(
+            "message" to message,
+            "type" to type
+        ))
+        sendPacket(packet)
     }
 
     /**
@@ -187,5 +185,41 @@ class ChatManager(
         eventHandlers[event]?.forEach { handler ->
             handler(data ?: Unit)
         }
+    }
+
+    /**
+     * 액세스 토큰을 갱신합니다.
+     */
+    private suspend fun refreshAccessToken() {
+        accessToken = tokenRefreshCallback()
+    }
+
+    /**
+     * 패킷을 전송합니다. 토큰이 만료된 경우 갱신 후 재전송합니다.
+     */
+    private suspend fun sendPacket(packet: ByteArray) {
+        try {
+            webSocket?.write(ByteBuffer.wrap(packet))
+        } catch (e: Exception) {
+            if (e.message?.contains("token expired") == true) {
+                refreshAccessToken()
+                webSocket?.write(ByteBuffer.wrap(packet))
+            } else {
+                throw e
+            }
+        }
+    }
+
+    suspend fun sendManagerMessage(message: String) {
+        val packet = makePacket(Constants.ServiceCode.SVC_MANAGERCHAT.code, mapOf("message" to message))
+        sendPacket(packet)
+    }
+
+    suspend fun whisper(userId: String, message: String) {
+        val packet = makePacket(Constants.ServiceCode.SVC_DIRECTCHAT.code, mapOf(
+            "userId" to userId,
+            "message" to message
+        ))
+        sendPacket(packet)
     }
 }

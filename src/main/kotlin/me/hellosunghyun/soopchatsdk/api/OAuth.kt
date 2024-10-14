@@ -55,7 +55,6 @@ class OAuth(private val clientId: String, private val clientSecret: String) {
             "client_secret" to clientSecret,
             "refresh_token" to refreshToken
         ))
-        // 응답을 파싱하여 토큰 반환
         return parseTokenResponse(response)
     }
 

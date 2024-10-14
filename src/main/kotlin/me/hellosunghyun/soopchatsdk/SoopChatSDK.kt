@@ -4,7 +4,7 @@ import me.hellosunghyun.soopchatsdk.api.OAuth
 import me.hellosunghyun.soopchatsdk.api.ApiClient
 import me.hellosunghyun.soopchatsdk.chat.ChatManager
 import me.hellosunghyun.soopchatsdk.utils.Constants
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 /**
  * SoopChatSDK의 주요 클래스입니다.
@@ -17,7 +17,10 @@ class SoopChatSDK(private val clientId: String, private val clientSecret: String
     private val apiClient = ApiClient(Constants.API_SERVER_HOST)
     private var chatManager: ChatManager? = null
     private var accessToken: String? = null
+    private var refreshToken: String? = null
+    private var tokenExpirationTime: Long = 0
     private var isConnected = false
+    private val coroutineScope = CoroutineScope(Dispatchers.Default)
 
     /**
      * OAuth 인증 페이지를 엽니다.
@@ -32,10 +35,48 @@ class SoopChatSDK(private val clientId: String, private val clientSecret: String
     /**
      * 인증 토큰을 설정합니다.
      *
-     * @param token 액세스 토큰
+     * @param accessToken 액세스 토큰
+     * @param refreshToken 리프레시 토큰
+     * @param expiresIn 토큰 만료 시간 (초)
      */
-    fun setAuthToken(token: String) {
-        accessToken = token
+    fun setAuthToken(accessToken: String, refreshToken: String, expiresIn: Int) {
+        this.accessToken = accessToken
+        this.refreshToken = refreshToken
+        this.tokenExpirationTime = System.currentTimeMillis() + (expiresIn * 1000)
+    }
+
+    /**
+     * 토큰이 만료되었는지 확인합니다.
+     *
+     * @return 토큰이 만료되었으면 true, 아니면 false
+     */
+    private fun isTokenExpired(): Boolean {
+        return System.currentTimeMillis() >= tokenExpirationTime
+    }
+
+    /**
+     * 토큰을 갱신합니다.
+     */
+    private suspend fun refreshToken() {
+        val oAuth = OAuth(clientId, clientSecret)
+        val tokenInfo = oAuth.refreshAuth(refreshToken ?: throw Exception("Refresh token is null"))
+        setAuthToken(
+            tokenInfo["access_token"] ?: throw Exception("Failed to refresh token"),
+            tokenInfo["refresh_token"] ?: throw Exception("Failed to refresh token"),
+            tokenInfo["expires_in"]?.toInt() ?: 3600
+        )
+    }
+
+    /**
+     * 유효한 액세스 토큰을 가져옵니다. 필요한 경우 토큰을 갱신합니다.
+     *
+     * @return 유효한 액세스 토큰
+     */
+    suspend fun getValidAccessToken(): String {
+        if (isTokenExpired()) {
+            refreshToken()
+        }
+        return accessToken ?: throw Exception("Access token is null")
     }
 
     /**
@@ -44,22 +85,32 @@ class SoopChatSDK(private val clientId: String, private val clientSecret: String
      * @throws Exception 연결 실패 시 예외 발생
      */
     fun connect() = runBlocking {
-        if (accessToken == null) {
-            throw Exception("Access token is required.")
-        }
-        val chatInfo = requestChatRoomList()
+        val validAccessToken = getValidAccessToken()
+        val chatInfo = requestChatRoomList(validAccessToken)
         if (chatManager == null) {
             chatManager = ChatManager(
                 chatInfo["chatAddress"] as String,
                 chatInfo["bjId"] as String,
-                accessToken!!,
+                validAccessToken,
                 chatInfo["ticket"] as String,
-                chatInfo["chatNo"] as Int
+                chatInfo["chatNo"] as Int,
+                { getValidAccessToken() } // 토큰 갱신 콜백 전달
             )
             isConnected = true
         } else {
             throw Exception("Already connected.")
         }
+    }
+
+    /**
+     * 채팅방 정보를 요청합니다.
+     *
+     * @param accessToken 유효한 액세스 토큰
+     * @return 채팅방 정보를 담은 Map
+     */
+    private suspend fun requestChatRoomList(accessToken: String): Map<String, Any> {
+        val response = apiClient.post("/broad/access/chatinfo", mapOf("access_token" to accessToken))
+        return parseChatInfoResponse(response)
     }
 
     /**
@@ -112,9 +163,11 @@ class SoopChatSDK(private val clientId: String, private val clientSecret: String
      */
     fun sendMessage(message: String) {
         if (!isConnected) {
-            throw Exception("Not connected to chat server.")
+            throw Exception("채팅 서버에 연결되지 않았습니다.")
         }
-        chatManager?.sendMessage(message, "normal")
+        coroutineScope.launch {
+            chatManager?.sendMessage(message, "normal")
+        }
     }
 
     /**
@@ -124,6 +177,21 @@ class SoopChatSDK(private val clientId: String, private val clientSecret: String
         chatManager?.disconnect()
         chatManager = null
         isConnected = false
+    }
+
+    /**
+     * 관리자 메시지를 전송합니다.
+     *
+     * @param message 전송할 메시지
+     * @throws Exception 연결되지 않은 상태에서 메시지 전송 시 예외 발생
+     */
+    fun sendManagerMessage(message: String) {
+        if (!isConnected) {
+            throw Exception("채팅 서버에 연결되지 않았습니다.")
+        }
+        coroutineScope.launch {
+            chatManager?.sendManagerMessage(message)
+        }
     }
 
     // 기타 필요한 메서드를 모두 추가했습니다.
