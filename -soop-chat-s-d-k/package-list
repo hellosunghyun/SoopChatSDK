@@ -18,10 +18,12 @@ $dokka.location:me.hellosunghyun.soopchatsdk.api/OAuth/openAuth/#kotlin.String/P
 $dokka.location:me.hellosunghyun.soopchatsdk.api/OAuth/refreshAuth/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.api/-o-auth/refresh-auth.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat////PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/index.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager///PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/index.html
-$dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/ChatManager/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.Int/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/-chat-manager.html
+$dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/ChatManager/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.Int#kotlin.coroutines.SuspendFunction0[kotlin.String]/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/-chat-manager.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/disconnect/#/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/disconnect.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/on/#kotlin.String#kotlin.Function1[kotlin.Any,kotlin.Unit]/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/on.html
+$dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/sendManagerMessage/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/send-manager-message.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/sendMessage/#kotlin.String#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/send-message.html
+$dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatManager/whisper/#kotlin.String#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-manager/whisper.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatRoomState.ChatNotice///PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-room-state/-chat-notice/index.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatRoomState.ChatNotice/ChatRoomState.ChatNotice/#kotlin.Boolean#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-room-state/-chat-notice/-chat-room-state.-chat-notice.html
 $dokka.location:me.hellosunghyun.soopchatsdk.chat/ChatRoomState.ChatNotice/getMessage/#/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk.chat/-chat-room-state/-chat-notice/get-message.html
@@ -198,9 +200,11 @@ $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK///PointingToDeclaration
 $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/SoopChatSDK/#kotlin.String#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/-soop-chat-s-d-k.html
 $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/connect/#/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/connect.html
 $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/disconnect/#/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/disconnect.html
+$dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/getValidAccessToken/#/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/get-valid-access-token.html
 $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/openAuth/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/open-auth.html
+$dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/sendManagerMessage/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/send-manager-message.html
 $dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/sendMessage/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/send-message.html
-$dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/setAuthToken/#kotlin.String/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/set-auth-token.html
+$dokka.location:me.hellosunghyun.soopchatsdk/SoopChatSDK/setAuthToken/#kotlin.String#kotlin.String#kotlin.Int/PointingToDeclaration/-soop-chat-s-d-k/me.hellosunghyun.soopchatsdk/-soop-chat-s-d-k/set-auth-token.html
 me.hellosunghyun.soopchatsdk
 me.hellosunghyun.soopchatsdk.api
 me.hellosunghyun.soopchatsdk.chat
